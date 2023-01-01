@@ -1,9 +1,10 @@
-const http= require("http")
+const http = require("http");
+const path=require("path")
 
-const server= http.createServer((req,res)=>{
-    res.end('hello i am server')
+const server = http.createServer((req,res)=>{
+    res.sendFile(path.join(__dirname,"./httpserver/index.html"));
 })
 
-server.listen(8000,()=>{
-    console.log('serever running on 8000')
+server.listen(8000,"127.0.0.1",()=>{
+    console.log('listening the port  8000')
 })
